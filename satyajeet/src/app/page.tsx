@@ -40,9 +40,9 @@ export default async function Home(props:{searchParams:Promise<{q:string}>}) {
             {category:{$regex:searchParams?.q || "",$options:"i"}},
           ]
         })
-      }
-    }else {
+      } else {
       groceryList = await Grocery.find({})
+      }
     }
   
   return (
